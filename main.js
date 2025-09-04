@@ -1,13 +1,14 @@
 // muda o nome a partir do seletor de classe
-var pacientes = document.querySelector(".subtitulo");
-pacientes.textContent = "Meus Pacientes";
+var subtitulo = document.querySelector(".subtitulo");
+subtitulo.textContent = "Meus Pacientes";
 var nutricao = document.querySelector(".titulo");
 nutricao.textContent = "Pedro Nutrição";
 
 //acessar a tag tr -menos o  paciente Paulo
-var paciente = document. querySelector("#primeiro-paciente");
+var paciente = document.querySelectorAll(".paciente");
+for(var i =0; i < paciente.length; i++){
 
-// Seleciona o conteúdo do peso da tag
+    // Seleciona o conteúdo do peso da tag
 var tdPeso = paciente.querySelector(".info-peso");
 var peso = tdPeso.textContent;
 
@@ -18,16 +19,27 @@ var altura = tdAltura.textContent;
 //calcula o imc
 var imc = peso/ (altura*altura);
 
-// acessa e altera o imc
-var tdImc = paciente.querySelector(".info-imc");
-tdImc.textContent = imc;
+// variáveis com valor true
+var pesoValido = true;
+var alturaValida =  true;
 
-if(peso < 0 || peso > 1000){
-alert("Peso inválido");
+if(pesoValido && alturaValida){
+    // acessa e altera o imc
+    var tdImc = paciente.querySelector(".info-imc");
+    tdImc.textContent = imc;
+    }
 
+    if(peso <= 0 || peso >= 1000){
+       console.log("peso inválido");
+        var pesoValido = false;
+        tdImc.textContent = "peso inválido";
+        }
 
-}
 if(altura < 0 || altura > 3.00){
-    alert("Altura inválido");
-    
+    console.log("altura inválido");
+    var alturaValida = false;
+    tdImc.textContent = "altura inválida";
+}
+
+
 }
