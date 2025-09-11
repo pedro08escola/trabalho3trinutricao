@@ -7,9 +7,7 @@ nutricao.textContent = "Pedro Nutrição";
 //acessar a tag tr -menos o  paciente Paulo
 var pacientes = document.querySelectorAll(".paciente");
 for(var i =0; i < pacientes.length; i++){
-paciente = pacientes[i];
-
-
+var paciente = pacientes[i];
 
 
     // Seleciona o conteúdo do peso da tag
@@ -21,7 +19,7 @@ var tdAltura = paciente.querySelector(".info-altura");
 var altura = tdAltura.textContent;
 
 //calcula o imc
-var imc = peso/ (altura*altura);
+var imc = peso/ (altura * altura);
 imc = imc.toFixed(2);
 
 // variáveis com valor true
@@ -35,13 +33,11 @@ if(pesoValido && alturaValida){
     }
 
     if(peso <= 0 || peso >= 1000){
-       console.log("peso inválido");
         var pesoValido = false;
         tdImc.textContent = "peso inválido";
         }
 
 if(altura < 0 || altura > 3.00){
-    console.log("altura inválido");
     var alturaValida = false;
     tdImc.textContent = "altura inválida";
 }
