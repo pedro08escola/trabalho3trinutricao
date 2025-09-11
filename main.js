@@ -5,8 +5,12 @@ var nutricao = document.querySelector(".titulo");
 nutricao.textContent = "Pedro Nutrição";
 
 //acessar a tag tr -menos o  paciente Paulo
-var paciente = document.querySelectorAll(".paciente");
-for(var i =0; i < paciente.length; i++){
+var pacientes = document.querySelectorAll(".paciente");
+for(var i =0; i < pacientes.length; i++){
+paciente = pacientes[i];
+
+
+
 
     // Seleciona o conteúdo do peso da tag
 var tdPeso = paciente.querySelector(".info-peso");
@@ -18,6 +22,7 @@ var altura = tdAltura.textContent;
 
 //calcula o imc
 var imc = peso/ (altura*altura);
+imc = imc.toFixed(2);
 
 // variáveis com valor true
 var pesoValido = true;
