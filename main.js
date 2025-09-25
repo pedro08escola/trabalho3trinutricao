@@ -35,12 +35,13 @@ if(pesoValido && alturaValida){
     if(peso <= 0 || peso >= 1000){
         var pesoValido = false;
         tdImc.textContent = "peso inválido";
+        paciente.style.backgroundColor = "red";
         }
 
 if(altura < 0 || altura > 3.00){
     var alturaValida = false;
     tdImc.textContent = "altura inválida";
+    paciente.style.backgroundColor = "red";
 }
-
 
 }
