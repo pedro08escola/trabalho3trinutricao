@@ -32,20 +32,23 @@ function criarTr(paciente){
 
 //é pra criar a tag tr da tabela 
 var pacienteTr = document.createElement("tr");
+pacienteTr.classList.add("paciente");
 
 //é pra criar a tag td da tabela 
-var nomeTd = document.createElement("td");
-var pesoTd = document.createElement("td");
-var alturaTd = document.createElement("td");
-var gorduraTd = document.createElement("td");
-var imcTd = document.createElement("td");
+
+
+var nomeTd = criarTd(paciente.nome, "info-nome");
+var pesoTd = criarTd(paciente.nome, "info-peso");
+var alturaTd = criarTd(paciente.nome, "info-altura");
+var gorduraTd = criarTd(paciente.nome, "info-gordura");
+var imcTd = criarTd(paciente.nome, "info-imc");
 
 //adiciona os valores as tags criadas
-nomeTd.textContent = paciente.nome;
-pesoTd.textContent = paciente.peso;
-alturaTd.textContent = paciente.altura;
-gorduraTd.textContent = paciente.gordura;
-imcTd.textContent = paciente.imc;
+// nomeTd.textContent = paciente.nome;
+// pesoTd.textContent = paciente.peso;
+// alturaTd.textContent = paciente.altura;
+// gorduraTd.textContent = paciente.gordura;
+// imcTd.textContent = paciente.imc;
 
 //aiciona o conteudo que adicionou no formulario para mostrar ao usuário
 pacienteTr.appendChild(nomeTd);
@@ -57,6 +60,10 @@ pacienteTr.appendChild(imcTd);
 return pacienteTr
 }
 
+function criarTd(dado, classe){
+const td = document.createElement("td");
+td.textContent = dado;
+td.classList.add("classe");
 
-
-
+return td;
+}
