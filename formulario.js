@@ -26,25 +26,16 @@ return paciente;
 }
 
 function criarTr(paciente){
-
 //Cria as tas <tr>
 var pacienteTr = document.createElement("tr");
 pacienteTr.classList.add("paciente");
 
-//Cria as tas <td>
-var nomeTd = criarTd(paciente.nome, "info-nome");
-var pesoTd = criarTd(paciente.nome, "info-peso");
-var alturaTd = criarTd(paciente.nome, "info-altura");
-var gorduraTd = criarTd(paciente.nome, "info-gordura");
-var imcTd = criarTd(paciente.nome, "info-imc");
-
 //aiciona o conteudo que adicionou no formulario para mostrar ao usuário
-pacienteTr.appendChild(nomeTd);
-pacienteTr.appendChild(pesoTd);
-pacienteTr.appendChild(alturaTd);
-pacienteTr.appendChild(gorduraTd);
-pacienteTr.appendChild(imcTd);
-
+pacienteTr.appendChild(criarTd(paciente.nome, "info-nome"));
+pacienteTr.appendChild(criarTd(paciente.peso, "info-peso"));
+pacienteTr.appendChild(criarTd(paciente.altura, "info-altura"));
+pacienteTr.appendChild(criarTd(paciente.gordura, "info-gordura"));
+pacienteTr.appendChild(criarTd(paciente.imc, "info-imc"));
 return pacienteTr
 }
 
