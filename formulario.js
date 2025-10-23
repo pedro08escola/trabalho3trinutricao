@@ -10,15 +10,12 @@ var paciente = buscaValoresFormulario(formulario)
 var pacienteTr = criarTr(paciente);
 var tabela = document.querySelector("#tabela-pacientes");
 tabela.appendChild(pacienteTr);
-
 });
 
 function buscaValoresFormulario(formulario){
-
 // Captura os valores digitados
-
 var paciente = {
-
+    
     nome: formulario.nome.value,
     peso: formulario.peso.value,
     altura: formulario.altura.value,
@@ -30,20 +27,16 @@ return paciente;
 
 function criarTr(paciente){
 
-//é pra criar a tag tr da tabela 
+//Cria as tas <tr>
 var pacienteTr = document.createElement("tr");
 pacienteTr.classList.add("paciente");
 
-//é pra criar a tag td da tabela 
-
-
+//Cria as tas <td>
 var nomeTd = criarTd(paciente.nome, "info-nome");
 var pesoTd = criarTd(paciente.nome, "info-peso");
 var alturaTd = criarTd(paciente.nome, "info-altura");
 var gorduraTd = criarTd(paciente.nome, "info-gordura");
 var imcTd = criarTd(paciente.nome, "info-imc");
-
-
 
 //aiciona o conteudo que adicionou no formulario para mostrar ao usuário
 pacienteTr.appendChild(nomeTd);
@@ -59,6 +52,5 @@ function criarTd(dado, classe){
 const td = document.createElement("td");
 td.textContent = dado;
 td.classList.add("classe");
-
 return td;
 }
