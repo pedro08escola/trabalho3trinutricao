@@ -8,8 +8,11 @@ event.preventDefault();
 var formulario = document.querySelector("#form-adiciona");
 var paciente = buscaValoresFormulario(formulario)
 var pacienteTr = criarTr(paciente);
+// Variavel para acessar tdBody e criar a tabela    
 var tabela = document.querySelector("#tabela-pacientes");
 tabela.appendChild(pacienteTr);
+
+formulario.reset();
 });
 
 function buscaValoresFormulario(formulario){
