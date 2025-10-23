@@ -43,12 +43,7 @@ var alturaTd = criarTd(paciente.nome, "info-altura");
 var gorduraTd = criarTd(paciente.nome, "info-gordura");
 var imcTd = criarTd(paciente.nome, "info-imc");
 
-//adiciona os valores as tags criadas
-// nomeTd.textContent = paciente.nome;
-// pesoTd.textContent = paciente.peso;
-// alturaTd.textContent = paciente.altura;
-// gorduraTd.textContent = paciente.gordura;
-// imcTd.textContent = paciente.imc;
+
 
 //aiciona o conteudo que adicionou no formulario para mostrar ao usuário
 pacienteTr.appendChild(nomeTd);
